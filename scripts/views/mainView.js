@@ -1,7 +1,8 @@
-define(['backbone', "jquery"] , function(Backbone, $) {
+define(['backbone', "jquery", "jade!templates/main"] , function(Backbone, $, template) {
   return Backbone.View.extend({
+  	template: template,
   	render: function (){
-  		this.$el.html("<h2> Hello World-helvete</h2>");
+  		this.$el.html(template({hello: "Hello World"}));
   		return this;
   	}
   });
